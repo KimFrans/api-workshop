@@ -11,7 +11,7 @@ const colorTemplate =  Handlebars.compile(colorTemplateText.innerHTML)
 // const filterTemplate =  Handlebars.compile(filterTemplateText.innerHTML)
 
 axios
-    .get('http://api-tutor.herokuapp.com/v1/colors')
+    .get('https://api-tutor.herokuapp.com/v1/colors')
     .then(function(result){
         // colors.innerHTML = result.data
         colors.innerHTML = colorTemplate({color: result.data});
@@ -20,7 +20,7 @@ axios
     });
 
 axios
-    .get('http://api-tutor.herokuapp.com/v1/makes')
+    .get('https://api-tutor.herokuapp.com/v1/makes')
     .then(function(result){
         // colors.innerHTML = result.data
         brand.innerHTML = colorTemplate({color: result.data});
@@ -29,7 +29,7 @@ axios
     });
 
 axios
-    .get('http://api-tutor.herokuapp.com/v1/cars')
+    .get('https://api-tutor.herokuapp.com/v1/cars')
     .then(function(result){
         // colors.innerHTML = result.data
         cars.innerHTML = colorTemplate({car: result.data});

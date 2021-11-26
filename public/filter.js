@@ -8,13 +8,13 @@ const filterTemplateText = document.querySelector('.filterTemplate');
 const filterTemplate =  Handlebars.compile(filterTemplateText.innerHTML)
 
 axios
-    .get('http://api-tutor.herokuapp.com/v1/colors')
+    .get('https://api-tutor.herokuapp.com/v1/colors')
     .then(function(result){
         filterColor.innerHTML = filterTemplate({filter: result.data});
     });
 
 axios
-    .get('http://api-tutor.herokuapp.com/v1/makes')
+    .get('https://api-tutor.herokuapp.com/v1/makes')
     .then(function(result){
         filterBrand.innerHTML = filterTemplate({filter: result.data});       
     });
@@ -35,7 +35,7 @@ axios
 
 filterButton.addEventListener('click', function(){
     axios
-    .get(`http://api-tutor.herokuapp.com/v1/cars/make/${theBrandValue}/color/${theColorValue}`)
+    .get(`https://api-tutor.herokuapp.com/v1/cars/make/${theBrandValue}/color/${theColorValue}`)
     .then(function(result){
         console.log(result.data)
         filterDisplay.innerHTML = filterTemplate({filters: result.data});
