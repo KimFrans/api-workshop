@@ -5,11 +5,37 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="styleCars.css">
+	<link rel="stylesheet" href="skeleton.css">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.4.2/handlebars.js" integrity="sha256-hSzapznWRy/aOZkctlN03an9DxCLlN8ZCQS0lxntiHg=" crossorigin="anonymous"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js" integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs=" crossorigin="anonymous"></script>
+
+	<script type="template-x" class="colourTemplate">
+		<ul>
+			{{#each color}}
+			<li>{{this}}</li>
+			{{/each}}
+		</ul>
+
+		{{#each car}}
+		<ul>
+			<li>{{this.make}}</li>
+			<li>{{this.model}}</li>
+			<li>{{this.color}}</li>
+			<li>{{this.price}}</li>
+			<li>{{this.reg_number}}</li>
+		</ul>
+		{{/each}}
+	</script>
+
 </head>
 <body>
 
-	<h1>Car info</h1>
+	<div class="header">
+		<h1>Car info</h1>
+	</div>
 
 	<h2>Colors</h2>
 	<div class="colors" >
@@ -25,5 +51,7 @@
 	<div class="cars">
 
 	</div>
+
+	<script src="app.js"></script>
 </body>
 </html>

@@ -6,9 +6,64 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Filter widget</title>
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="skeleton.css">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.4.2/handlebars.js" integrity="sha256-hSzapznWRy/aOZkctlN03an9DxCLlN8ZCQS0lxntiHg=" crossorigin="anonymous"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js" integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs=" crossorigin="anonymous"></script>
+
+	<script type="template-x" class="filterTemplate">
+		{{#each filter}}
+                <option value="{{this}}">{{this}}</option>
+        {{/each}}
+
+		{{#each filters}}
+		<ul>
+			<li>{{this.make}}</li>
+			<li>{{this.model}}</li>
+			<li>{{this.color}}</li>
+			<li>{{this.price}}</li>
+			<li>{{this.reg_number}}</li>
+		</ul>
+		{{/each}}
+	
+
+	</script>
 
 </head>
 <body>
-	<h1>Filter widget</h1>
+
+	<div class="header">
+		<h1>Filter widget</h1>
+	</div>
+	
+
+	<div class="colorFilter">
+        <label for="color">Color:</label>
+        <select name="colors" id="colors" class="colors" value="">
+            
+        </select>
+
+	</div>
+
+	<div class="brandsFilter">
+        <label for="brand">Brand:</label>
+        <select name="brand" id="brand" class="brand">
+            
+        </select>
+
+	</div>
+	
+
+	
+	<button class="search">search</button>
+	
+
+	<div class="search-result">
+
+	</div>
+
+	<script src="filter.js"></script>
+
 </body>
 </html>
